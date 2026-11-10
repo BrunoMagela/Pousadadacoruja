@@ -2,7 +2,7 @@ import { useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { Icon } from "./Icon.jsx";
 import { SectionHead, WhatsAppButton } from "./ui.jsx";
-import { experiences, reasons } from "../data/pousada.js";
+import { reasons } from "../data/pousada.js";
 
 const fmt = (iso) => {
   if (!iso) return "";
@@ -54,19 +54,14 @@ function Counter({ label, hint, value, min, max, onChange }) {
 
 export default function StayBuilder() {
   const [reason, setReason] = useState("casal");
-  const [picked, setPicked] = useState(["cafe", "por-do-sol"]);
   const [checkin, setCheckin] = useState("");
   const [checkout, setCheckout] = useState("");
   const [adults, setAdults] = useState(2);
   const [kids, setKids] = useState(0);
 
   const r = reasons.find((x) => x.id === reason);
-  const chosen = experiences.filter((e) => picked.includes(e.id));
   const nights = nightsBetween(checkin, checkout);
   const datesInvalid = checkin && checkout && nights === 0;
-
-  const toggle = (id) =>
-    setPicked((p) => (p.includes(id) ? p.filter((x) => x !== id) : [...p, id]));
 
   const chooseReason = (id) => {
     setReason(id);
@@ -87,18 +82,17 @@ export default function StayBuilder() {
       checkin && checkout && nights > 0
         ? `• Datas: ${fmt(checkin)} a ${fmt(checkout)} (${nights} ${nights === 1 ? "noite" : "noites"})`
         : `• Datas: ainda vou definir`,
-      chosen.length ? `• Quero aproveitar: ${chosen.map((c) => c.label.toLowerCase()).join(", ")}` : null,
       ``,
       `Quais quartos estão livres e qual o valor?`,
     ];
     return lines.filter((l) => l !== null).join("\n");
-  }, [r, people, checkin, checkout, nights, chosen]);
+  }, [r, people, checkin, checkout, nights]);
 
   return (
     <section id="estadia" className="bg-sand py-20 sm:py-28" aria-labelledby="estadia-t">
       <div className="container-site gutter">
         <SectionHead eyebrow="Criador de estadia" title={<span id="estadia-t">Monte a sua estadia em 30 segundos.</span>}>
-          Escolha com quem vem e o que quer viver por aqui. A gente transforma isso numa mensagem pronta e a pousada responde com os quartos livres e o valor exato.
+          Diga com quem vem, quando e quantas pessoas. A gente transforma isso numa mensagem pronta e a pousada responde com os quartos livres e o valor exato.
         </SectionHead>
 
         <div className="mt-12 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
@@ -132,30 +126,7 @@ export default function StayBuilder() {
               </div>
             </Step>
 
-            <Step n="2" title="O que você quer viver aqui?">
-              <div className="flex flex-wrap gap-2.5">
-                {experiences.map((e) => {
-                  const on = picked.includes(e.id);
-                  return (
-                    <motion.button
-                      key={e.id}
-                      type="button"
-                      aria-pressed={on}
-                      whileTap={{ scale: 0.96 }}
-                      onClick={() => toggle(e.id)}
-                      className={`inline-flex min-h-12 items-center gap-2 rounded-full border px-4 text-[0.95rem] font-medium transition-colors ${
-                        on ? "border-moss bg-moss text-white" : "border-line bg-paper text-ink hover:border-stone"
-                      }`}
-                    >
-                      <Icon name={on ? "check" : e.icon} className="size-4" strokeWidth={on ? 2.6 : 1.8} />
-                      {e.label}
-                    </motion.button>
-                  );
-                })}
-              </div>
-            </Step>
-
-            <Step n="3" title="Quando e quantas pessoas?">
+            <Step n="2" title="Quando e quantas pessoas?">
               <div className="grid gap-3 sm:grid-cols-2">
                 <label className="flex flex-col gap-1.5">
                   <span className="text-sm font-semibold text-stone">Chegada</span>
@@ -203,16 +174,6 @@ export default function StayBuilder() {
                   </div>
                 </dl>
 
-                <ul className="flex min-h-10 flex-wrap gap-2" aria-label="Experiências escolhidas">
-                  <AnimatePresence initial={false}>
-                    {chosen.map((c) => (
-                      <motion.li key={c.id} layout initial={{ opacity: 0, scale: 0.85 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.85 }} className="inline-flex items-center gap-1.5 rounded-full bg-honey/15 px-3 py-1.5 text-sm text-honey">
-                        <Icon name={c.icon} className="size-3.5" /> {c.label}
-                      </motion.li>
-                    ))}
-                  </AnimatePresence>
-                  {chosen.length === 0 && <li className="text-sm text-sand/50">Escolha uma ou mais experiências.</li>}
-                </ul>
 
                 <WhatsAppButton message={message} className="w-full" >Pedir orçamento exato no WhatsApp</WhatsAppButton>
                 <p className="text-center text-xs text-sand/55">Abre o WhatsApp com a mensagem pronta. Nada é reservado até a pousada confirmar.</p>

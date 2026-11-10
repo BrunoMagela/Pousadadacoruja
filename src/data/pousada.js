@@ -41,15 +41,6 @@ export const reasons = [
   { id: "amigos", label: "Amigos", icon: "users", title: "Encontro da turma", line: "Quartos lado a lado e um pub para a noite render." },
 ];
 
-export const experiences = [
-  { id: "cafe", label: "Café da manhã sem pressa", icon: "coffee" },
-  { id: "pub", label: "Noite no pub", icon: "beer" },
-  { id: "por-do-sol", label: "Pôr do sol na serra", icon: "sun" },
-  { id: "jardim", label: "Descanso no jardim", icon: "leaf" },
-  { id: "carro", label: "Vou de carro", icon: "car" },
-  { id: "jabuticaba", label: "Jabuticaba do pé (na época)", icon: "berry" },
-];
-
 // Stories: cada círculo abre uma sequência em tela cheia.
 export const stories = [
   {
