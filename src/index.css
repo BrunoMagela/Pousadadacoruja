@@ -1,0 +1,79 @@
+@import "tailwindcss";
+
+/* Eco-luxury da Coruja: verde-mata profundo, areia, musgo e o amarelo das banquetas do pub */
+@theme {
+  --color-forest: #14211A;
+  --color-forest-2: #1D2E24;
+  --color-moss: #3E6B4C;
+  --color-moss-soft: #DCE5D5;
+  --color-sand: #F1EDE3;
+  --color-sand-2: #E6E0D2;
+  --color-paper: #FBFAF6;
+  --color-ink: #17221B;
+  --color-stone: #5B6A5F;
+  --color-line: #D5D2C4;
+  --color-honey: #E2B23F;
+  --color-honey-2: #EEC45C;
+  --color-wa: #1F8F57;
+
+  --font-display: "Gloock", "Georgia", "Times New Roman", serif;
+  --font-sans: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --radius-card: 1.25rem;
+  --shadow-soft: 0 18px 40px -18px rgb(20 33 26 / 0.35);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    margin: 0;
+    background: var(--color-sand);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  h1, h2, h3 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+  p { text-wrap: pretty; }
+  section { scroll-margin-top: 72px; }
+  :focus-visible {
+    outline: 3px solid var(--color-honey);
+    outline-offset: 3px;
+    border-radius: 10px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+  }
+}
+
+@utility gutter {
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+
+@utility container-site {
+  width: 100%;
+  max-width: 1180px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@utility eyebrow {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+@utility no-scrollbar {
+  scrollbar-width: none;
+  &::-webkit-scrollbar { display: none; }
+}
