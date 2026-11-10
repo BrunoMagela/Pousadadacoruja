@@ -6,217 +6,277 @@
 <title>Pousada da Coruja</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <meta name="description" content="Pousada da Coruja em Matinhos, litoral do Paraná. 8 quartos em volta de um jardim, café da manhã, estacionamento, Wi-Fi, pet friendly e pub bar. Reserve direto pelo WhatsApp.">
+<meta name="theme-color" content="#F2F4EC">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<meta property="og:title" content="Pousada da Coruja · Matinhos, PR">
+<meta property="og:description" content="8 quartos em volta de um jardim, café da manhã, pub bar e pet friendly. Reserve direto pelo WhatsApp.">
+<meta property="og:image" content="https://pousada-da-coruja.vercel.app/img/por-do-sol-800.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Cpath d='M8 12 L13 6 L16 11 Q20 9 24 11 L27 6 L32 12 Q35 18 34 25 Q32 35 20 36 Q8 35 6 25 Q5 18 8 12Z' fill='%232F5D3F'/%3E%3Ccircle cx='14.5' cy='19' r='5.2' fill='%23E4B43A'/%3E%3Ccircle cx='25.5' cy='19' r='5.2' fill='%23E4B43A'/%3E%3Ccircle cx='14.5' cy='19' r='2.2' fill='%2316261D'/%3E%3Ccircle cx='25.5' cy='19' r='2.2' fill='%2316261D'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"LodgingBusiness","name":"Pousada da Coruja","telephone":"+55 41 99687-7984","image":"https://pousada-da-coruja.vercel.app/img/por-do-sol-800.jpg","url":"https://pousada-da-coruja.vercel.app","address":{"@type":"PostalAddress","streetAddress":"R. Tarumã, 51","addressLocality":"Matinhos","addressRegion":"PR","postalCode":"83260-000","addressCountry":"BR"},"petsAllowed":true,"amenityFeature":[{"@type":"LocationFeatureSpecification","name":"Café da manhã","value":true},{"@type":"LocationFeatureSpecification","name":"Estacionamento","value":true},{"@type":"LocationFeatureSpecification","name":"Wi-Fi","value":true},{"@type":"LocationFeatureSpecification","name":"Bar","value":true}]}
+</script>
 <style>
-/* Layout: jardim de dia (claro, verde) → pub à noite (faixa escura, luz amarela) → chegada e reserva */
+/* Layout: jardim de dia (claro, verde) → pub à noite (faixa escura, luz amarela) → chegada e reserva. Mobile primeiro. */
 :root{
-  --bg:#F2F4EC;          /* folha clara */
+  --bg:#F2F4EC;
   --surface:#FFFFFF;
-  --ink:#16261D;         /* verde-mata */
+  --ink:#16261D;
   --muted:#4E5F54;
   --line:#D6DCCD;
-  --leaf:#2F5D3F;        /* verde do jardim / porta */
-  --mustard:#E4B43A;     /* banquetas amarelas do pub */
+  --leaf:#2F5D3F;
+  --leaf-soft:#E2EADF;
+  --mustard:#E4B43A;
+  --mustard-hover:#EFC453;
   --mustard-ink:#1E1A0C;
-  --night:#121B16;       /* pub à noite */
-  --night-2:#1C2922;
+  --night:#121B16;
   --night-ink:#EFEADB;
   --night-muted:#B9B8A6;
+  --cta-bg:#2F5D3F;
+  --cta-ink:#F4F6EE;
+  --cta-muted:#D3DFD0;
   --wa:#1F8F57;
+  --shadow:0 10px 30px rgba(22,38,29,.14);
   --f-display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
   --f-body:"Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
-  --r:14px;
+  --r:16px;
   --max:1160px;
+  --gutter:max(20px, env(safe-area-inset-left, 0px));
+  --gutter-r:max(20px, env(safe-area-inset-right, 0px));
+  --bar-h:0px;
 }
 @media (prefers-color-scheme: dark){
   :root:not([data-theme="light"]){
     --bg:#0F1712; --surface:#18231C; --ink:#E9EEE3; --muted:#A7B3A9; --line:#2B3A31;
-    --leaf:#8CC49E; --mustard:#E8BC4A; --mustard-ink:#1E1A0C;
-    --night:#0A100C; --night-2:#141E18; --night-ink:#EFEADB; --night-muted:#B9B8A6; --wa:#2DA866;
+    --leaf:#8CC49E; --leaf-soft:#1E2E24; --mustard:#E8BC4A; --mustard-hover:#F2CB62; --mustard-ink:#1E1A0C;
+    --night:#0A100C; --night-ink:#EFEADB; --night-muted:#B9B8A6;
+    --cta-bg:#1F3B2A; --cta-ink:#F4F6EE; --cta-muted:#C6D3C3; --wa:#2DA866;
+    --shadow:0 10px 30px rgba(0,0,0,.45);
     color-scheme:dark;
   }
 }
 :root[data-theme="dark"]{
   --bg:#0F1712; --surface:#18231C; --ink:#E9EEE3; --muted:#A7B3A9; --line:#2B3A31;
-  --leaf:#8CC49E; --mustard:#E8BC4A; --mustard-ink:#1E1A0C;
-  --night:#0A100C; --night-2:#141E18; --night-ink:#EFEADB; --night-muted:#B9B8A6; --wa:#2DA866;
+  --leaf:#8CC49E; --leaf-soft:#1E2E24; --mustard:#E8BC4A; --mustard-hover:#F2CB62; --mustard-ink:#1E1A0C;
+  --night:#0A100C; --night-ink:#EFEADB; --night-muted:#B9B8A6;
+  --cta-bg:#1F3B2A; --cta-ink:#F4F6EE; --cta-muted:#C6D3C3; --wa:#2DA866;
+  --shadow:0 10px 30px rgba(0,0,0,.45);
   color-scheme:dark;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 @media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;padding-bottom:var(--bar-h)}
 img{max-width:100%;display:block;height:auto}
-a{color:inherit}
+a{color:inherit;-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit;-webkit-tap-highlight-color:transparent}
 h1,h2,h3{font-family:var(--f-display);line-height:1.05;letter-spacing:-.02em;text-wrap:balance;margin:0}
-p{margin:0}
-.wrap{max-width:var(--max);margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
-.eyebrow{font-size:.78rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf)}
-:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:6px}
+p{margin:0;text-wrap:pretty}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter-r)}
+.eyebrow{font-size:.78rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--leaf)}
+:focus-visible{outline:3px solid var(--mustard);outline-offset:3px;border-radius:8px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
 
-/* Botões */
-.btn{display:inline-flex;align-items:center;gap:.6em;font-weight:600;font-size:1rem;text-decoration:none;padding:.9em 1.4em;border-radius:999px;border:2px solid transparent;transition:transform .15s ease, background .15s ease}
-.btn:hover{transform:translateY(-1px)}
-.btn svg{width:1.25em;height:1.25em;flex:none}
+/* Botões — alvo de toque ≥ 48px */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.6em;min-height:52px;font-weight:700;font-size:1rem;line-height:1.2;text-decoration:none;text-align:center;padding:.85em 1.5em;border-radius:999px;border:2px solid transparent;cursor:pointer;transition:transform .15s ease, background-color .15s ease, border-color .15s ease}
+.btn:active{transform:scale(.98)}
+@media (hover:hover){.btn:hover{transform:translateY(-1px)}}
+.btn svg{width:1.3em;height:1.3em;flex:none}
 .btn-main{background:var(--mustard);color:var(--mustard-ink)}
-.btn-main:hover{background:#F0C552}
-.btn-ghost{border-color:var(--line);color:var(--ink)}
-.btn-ghost:hover{border-color:var(--ink)}
+@media (hover:hover){.btn-main:hover{background:var(--mustard-hover)}}
+.btn-ghost{border-color:var(--line);color:var(--ink);background:transparent}
+@media (hover:hover){.btn-ghost:hover{border-color:var(--ink)}}
+.btn-row{display:flex;flex-wrap:wrap;gap:12px}
+@media (max-width:560px){
+  .btn-row{flex-direction:column}
+  .btn-row .btn,.btn-block-m{width:100%}
+}
 
 /* Cabeçalho */
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
-header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.15rem}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--bg)}
+header.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb, var(--bg) 90%, transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:border-color .2s ease}
+header.top.scrolled{border-bottom-color:var(--line)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--f-display);font-weight:700;font-size:1.12rem;white-space:nowrap}
 .brand svg{width:34px;height:34px;flex:none}
-.nav{display:flex;align-items:center;gap:22px;font-size:.95rem;font-weight:500}
-.nav a{text-decoration:none;color:var(--muted)}
-.nav a:hover{color:var(--ink)}
-.nav .btn{padding:.6em 1.1em;font-size:.92rem;color:var(--mustard-ink)}
-@media (max-width:820px){.nav a:not(.btn){display:none}}
+.nav{display:flex;align-items:center;gap:24px;font-size:.95rem;font-weight:600}
+.nav a:not(.btn){text-decoration:none;color:var(--muted);padding-block:10px}
+@media (hover:hover){.nav a:not(.btn):hover{color:var(--ink)}}
+.nav .btn{min-height:44px;padding:.55em 1.2em;font-size:.92rem}
+@media (max-width:860px){.nav a:not(.btn){display:none}}
 
 /* Hero */
-.hero{padding-block:48px 64px}
+.hero{padding-block:40px 64px}
 .hero .wrap{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
 .hero-text{display:flex;flex-direction:column;gap:22px;min-width:0}
-.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:800}
+.hero h1{font-size:clamp(2.35rem,6vw,4.6rem);font-weight:800}
 .hero h1 em{font-style:normal;color:var(--leaf)}
 .hero .lead{font-size:1.15rem;color:var(--muted);max-width:34em}
-.hero .actions{display:flex;flex-wrap:wrap;gap:12px}
-.rating{display:inline-flex;align-items:center;gap:10px;font-size:.95rem;color:var(--muted);text-decoration:none}
+.rating{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px 10px;font-size:.95rem;color:var(--muted);text-decoration:none;align-self:flex-start}
 .rating b{font-family:var(--f-display);font-size:1.35rem;color:var(--ink)}
 .stars{color:var(--mustard);letter-spacing:2px;font-size:1.05rem}
-.hero-media{position:relative;min-width:0;justify-self:end;width:100%;max-width:440px}
+.hero-media{position:relative;min-width:0;margin:0;justify-self:end;width:100%;max-width:440px}
 .hero-media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:220px 220px var(--r) var(--r)}
-.hero-media figcaption{position:absolute;left:-18px;bottom:28px;background:var(--surface);color:var(--ink);padding:12px 16px;border-radius:12px;font-size:.88rem;box-shadow:0 10px 30px rgba(0,0,0,.14);max-width:230px;line-height:1.35}
+.hero-media figcaption{position:absolute;left:-18px;bottom:28px;background:var(--surface);color:var(--ink);padding:12px 16px;border-radius:12px;font-size:.88rem;box-shadow:var(--shadow);max-width:230px;line-height:1.35}
 .hero-media figcaption strong{display:block;font-family:var(--f-display);font-size:1rem}
 @media (max-width:860px){
-  .hero-media{justify-self:stretch;max-width:none}
-  .hero{padding-block:24px 48px}
-  .hero .wrap{grid-template-columns:1fr;gap:28px}
-  .hero-media{order:-1}
-  .hero-media img{aspect-ratio:4/3.4;border-radius:160px 160px var(--r) var(--r)}
-  .hero-media figcaption{left:12px;bottom:12px}
+  .hero{padding-block:12px 40px}
+  .hero .wrap{grid-template-columns:1fr;gap:24px}
+  .hero-media{order:-1;justify-self:stretch;max-width:none}
+  .hero-media img{aspect-ratio:5/4;border-radius:999px 999px var(--r) var(--r)}
+  .hero-media figcaption{display:none}
+  .hero-text{gap:18px}
+  .hero .lead{font-size:1.06rem}
 }
+@media (min-width:561px) and (max-width:860px){.hero-media img{aspect-ratio:16/10;border-radius:var(--r)}}
 
 /* Diferenciais */
 .perks{border-block:1px solid var(--line);background:var(--surface)}
-.perks ul{list-style:none;margin:0;padding-block:28px;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
-.perks li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;font-weight:600;font-size:.95rem}
-.perks .ic{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:color-mix(in srgb, var(--leaf) 12%, transparent);color:var(--leaf)}
+.perks ul{list-style:none;margin:0 auto;padding-block:28px;display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.perks li{display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px;font-weight:600;font-size:.95rem;line-height:1.3}
+.perks .ic{width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:var(--leaf-soft);color:var(--leaf);flex:none}
 .perks .ic svg{width:26px;height:26px}
-@media (max-width:860px){.perks ul{grid-template-columns:repeat(3,1fr);row-gap:24px}}
+@media (max-width:860px){
+  .perks ul{grid-template-columns:repeat(2,1fr);gap:18px 12px;padding-block:24px}
+  .perks li{flex-direction:row;text-align:left;gap:12px;font-size:.95rem}
+  .perks .ic{width:44px;height:44px}
+  .perks .ic svg{width:22px;height:22px}
+}
 
-section{scroll-margin-top:80px}
+section{scroll-margin-top:72px}
 .sec{padding-block:88px}
-.sec-head{display:flex;flex-direction:column;gap:14px;max-width:40rem;margin-bottom:40px}
-.sec-head h2{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:800}
+.sec-head{display:flex;flex-direction:column;gap:14px;max-width:40rem;margin-bottom:36px}
+.sec-head h2{font-size:clamp(1.95rem,4.2vw,3.1rem);font-weight:800}
 .sec-head p{color:var(--muted);font-size:1.08rem}
-@media (max-width:640px){.sec{padding-block:64px}}
+@media (max-width:640px){.sec{padding-block:56px}.sec-head{margin-bottom:24px;gap:12px}.sec-head p{font-size:1.02rem}}
 
 /* Quartos */
 .rooms{display:grid;grid-template-columns:1.25fr 1fr;gap:40px;align-items:center}
-.rooms img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r)}
-.rooms-text{display:flex;flex-direction:column;gap:22px;min-width:0}
-.big-num{font-family:var(--f-display);font-weight:800;font-size:clamp(4.5rem,10vw,7rem);line-height:.85;color:var(--leaf)}
-.big-num small{display:block;font-size:1.1rem;letter-spacing:.02em;color:var(--ink);font-weight:700;margin-top:10px}
+.rooms-media{margin:0;min-width:0}
+.rooms-media img{width:100%;aspect-ratio:16/10;object-fit:cover;border-radius:var(--r)}
+.rooms-text{display:flex;flex-direction:column;gap:20px;min-width:0}
+.rooms-title{display:flex;align-items:flex-end;gap:14px}
+.big-num{font-family:var(--f-display);font-weight:800;font-size:clamp(4.5rem,10vw,7rem);line-height:.8;color:var(--leaf)}
+.rooms-title h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:800;line-height:1.05;padding-bottom:4px}
+.rooms-text > p{color:var(--muted)}
 .checks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
-.checks li{display:flex;gap:10px;align-items:flex-start}
-.checks li::before{content:"";flex:none;width:18px;height:18px;margin-top:4px;border-radius:50%;background:var(--mustard) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E1A0C' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
-@media (max-width:860px){.rooms{grid-template-columns:1fr;gap:28px}}
+.checks li{display:flex;gap:12px;align-items:flex-start}
+.checks li::before{content:"";flex:none;width:20px;height:20px;margin-top:3px;border-radius:50%;background:var(--mustard) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231E1A0C' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/12px no-repeat}
+.rooms .btn{align-self:flex-start}
+@media (max-width:860px){.rooms{grid-template-columns:1fr;gap:24px}}
+@media (max-width:560px){.rooms .btn{align-self:stretch}}
 
-/* Jardim */
+/* Galerias (abrem em tela cheia) */
+.shot{margin:0;position:relative;overflow:hidden;border-radius:var(--r);background:var(--leaf-soft)}
+.shot button{all:unset;display:block;width:100%;height:100%;cursor:zoom-in}
+.shot button:focus-visible{outline:3px solid var(--mustard);outline-offset:-3px}
+.shot img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+@media (hover:hover){.shot:hover img{transform:scale(1.04)}}
+.tag{position:absolute;left:10px;bottom:10px;background:rgba(14,22,17,.74);color:#F3F1E6;font-size:.8rem;font-weight:600;padding:5px 11px;border-radius:999px;pointer-events:none;white-space:nowrap}
+.zoom-hint{position:absolute;right:10px;top:10px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(14,22,17,.6);color:#fff;pointer-events:none}
+.zoom-hint svg{width:16px;height:16px}
+
 .garden-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px}
-.garden-grid figure{margin:0;position:relative;overflow:hidden;border-radius:var(--r)}
-.garden-grid img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
-.garden-grid figure:hover img{transform:scale(1.04)}
-.garden-grid figcaption{position:absolute;left:10px;bottom:10px;background:rgba(18,27,22,.72);color:#F3F1E6;font-size:.82rem;font-weight:500;padding:5px 11px;border-radius:999px}
 .g1{grid-column:span 2;grid-row:span 2}
 .g2{grid-row:span 2}
 .g5{grid-column:span 4}
 @media (max-width:860px){
-  .garden-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .garden-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:clamp(130px,40vw,220px);gap:10px}
   .g1{grid-column:span 2;grid-row:span 2}
-  .g2{grid-row:span 2}
   .g5{grid-column:span 2}
 }
-.jabuticaba{margin-top:36px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:20px 24px}
-.jabuticaba .dot{width:46px;height:46px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#5b3a55 0 18%,#24121f 60%);box-shadow:16px 6px 0 -6px #2c1626, 6px 18px 0 -8px #3b2033}
+.jabuticaba{margin-top:28px;display:grid;grid-template-columns:96px 1fr;gap:20px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px 22px 14px 14px}
+.jabuticaba img{width:96px;height:96px;object-fit:cover;object-position:50% 30%;border-radius:12px}
 .jabuticaba p{color:var(--muted);min-width:0}
-.jabuticaba strong{color:var(--ink)}
+.jabuticaba strong{color:var(--ink);display:block;font-family:var(--f-display);font-size:1.12rem;margin-bottom:2px}
+@media (max-width:420px){.jabuticaba{grid-template-columns:76px 1fr;gap:14px}.jabuticaba img{width:76px;height:76px}.jabuticaba p{font-size:.95rem}}
 
-/* Pub (faixa noturna) */
+/* Pub */
 .pub{background:var(--night);color:var(--night-ink);position:relative;overflow:hidden}
 .pub::before{content:"";position:absolute;width:620px;height:620px;right:-160px;top:-220px;background:radial-gradient(circle,rgba(232,188,74,.22),transparent 65%);pointer-events:none}
+.pub .wrap{position:relative}
 .pub .eyebrow{color:var(--mustard)}
 .pub .sec-head p{color:var(--night-muted)}
-.pub-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;position:relative}
-.pub-grid figure{margin:0;border-radius:var(--r);overflow:hidden;position:relative}
-.pub-grid img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.pub-main{grid-row:span 2;min-height:420px}
-.pub-side{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.pub-side figure{aspect-ratio:3/4}
-.pub-wide{aspect-ratio:16/9}
-.pub-grid figcaption{position:absolute;left:10px;bottom:10px;background:rgba(10,16,12,.75);color:#F3F1E6;font-size:.82rem;padding:5px 11px;border-radius:999px}
-.pub-foot{margin-top:28px;display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;position:relative}
+.pub-grid{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:380px;gap:12px}
+.pub-grid .shot{background:#1C2922}
+@media (max-width:860px){
+  .pub-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;gap:10px}
+  .pub-grid .p-main{grid-column:span 2;aspect-ratio:4/3}
+  .pub-grid .p-side{aspect-ratio:3/4}
+}
+.pub-foot{margin-top:28px;display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between}
 .pub-foot p{color:var(--night-muted);max-width:36em}
-.pub-foot a.ig{color:var(--mustard);font-weight:600;text-decoration:none;display:inline-flex;gap:8px;align-items:center}
-.pub-foot a.ig svg{width:20px;height:20px}
-@media (max-width:860px){.pub-grid{grid-template-columns:1fr}.pub-main{min-height:0;aspect-ratio:16/10;grid-row:auto}}
+.ig{color:var(--mustard);font-weight:700;text-decoration:none;display:inline-flex;gap:8px;align-items:center;min-height:44px}
+.ig svg{width:22px;height:22px}
 
 /* Localização + avaliações */
 .visit{display:grid;grid-template-columns:1.2fr 1fr;gap:20px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:18px;min-width:0}
-.card h3{font-size:1.6rem;font-weight:700}
-.addr{font-size:1.1rem;line-height:1.5}
-.addr span{display:block;color:var(--muted);font-size:.98rem}
-.map-art{height:150px;border-radius:10px;background:
-  radial-gradient(circle at 62% 46%, var(--mustard) 0 9px, transparent 10px),
-  radial-gradient(circle at 62% 46%, color-mix(in srgb, var(--mustard) 30%, transparent) 0 26px, transparent 27px),
-  linear-gradient(0deg, transparent 47%, var(--line) 47% 53%, transparent 53%) 0 0/100% 50px,
-  linear-gradient(90deg, transparent 47%, var(--line) 47% 53%, transparent 53%) 0 0/70px 100%,
-  linear-gradient(180deg, color-mix(in srgb, var(--leaf) 10%, var(--bg)) 0 72%, color-mix(in srgb, var(--leaf) 28%, var(--bg)) 72%);
-}
-.score{display:flex;align-items:baseline;gap:12px}
-.score b{font-family:var(--f-display);font-size:4.4rem;line-height:1;font-weight:800}
-.score .stars{font-size:1.4rem}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:32px;display:flex;flex-direction:column;gap:16px;min-width:0}
+.card h3{font-size:1.5rem;font-weight:700}
+.addr{display:flex;gap:14px;align-items:flex-start}
+.addr .pin{flex:none;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--leaf-soft);color:var(--leaf)}
+.addr .pin svg{width:22px;height:22px}
+.addr p{font-size:1.1rem;line-height:1.45;font-weight:600}
+.addr p span{display:block;color:var(--muted);font-size:.98rem;font-weight:400}
+.score{display:flex;align-items:center;gap:14px}
+.score b{font-family:var(--f-display);font-size:4rem;line-height:1;font-weight:800}
+.score .stars{font-size:1.35rem}
 .card .muted{color:var(--muted)}
-.card .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto}
-@media (max-width:860px){.visit{grid-template-columns:1fr}.card{padding:24px}}
+.card .btn-row{margin-top:auto}
+@media (max-width:860px){.visit{grid-template-columns:1fr}.card{padding:22px}.score b{font-size:3.4rem}}
 
 /* Perguntas */
 .faq{display:grid;grid-template-columns:repeat(2,1fr);gap:0 40px;border-top:1px solid var(--line)}
-.faq details{border-bottom:1px solid var(--line);padding-block:18px}
-.faq summary{cursor:pointer;font-weight:600;font-size:1.06rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{cursor:pointer;font-weight:700;font-size:1.04rem;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding-block:18px;min-height:56px}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";font-family:var(--f-display);font-size:1.4rem;line-height:1;color:var(--leaf)}
+.faq summary::after{content:"+";flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--leaf-soft);font-family:var(--f-display);font-size:1.2rem;line-height:1;color:var(--leaf)}
 .faq details[open] summary::after{content:"–"}
-.faq details p{color:var(--muted);margin-top:10px}
+.faq details p{color:var(--muted);padding-bottom:18px;margin-top:-4px}
 @media (max-width:760px){.faq{grid-template-columns:1fr}}
 
 /* Chamada final */
-.cta{background:var(--leaf);color:#F4F6EE}
-:root .cta{--cta-ink:#F4F6EE}
+.cta{background:var(--cta-bg);color:var(--cta-ink)}
 .cta .wrap{padding-block:72px;display:grid;grid-template-columns:1fr auto;gap:28px;align-items:center}
-.cta h2{font-size:clamp(2rem,4.4vw,3.2rem);font-weight:800;color:#F4F6EE}
-.cta p{color:#D9E4D6;margin-top:12px;font-size:1.08rem}
-.cta .phone{font-family:var(--f-display);font-weight:700;font-size:1.4rem;color:#F4F6EE;user-select:all}
-.cta-actions{display:flex;flex-direction:column;align-items:flex-start;gap:12px}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cta{background:#1F3B2A}}
-:root[data-theme="dark"] .cta{background:#1F3B2A}
-@media (max-width:760px){.cta .wrap{grid-template-columns:1fr}}
+.cta h2{font-size:clamp(1.95rem,4.4vw,3.2rem);font-weight:800}
+.cta p{color:var(--cta-muted);margin-top:12px;font-size:1.06rem}
+.cta-actions{display:flex;flex-direction:column;align-items:stretch;gap:14px;min-width:0}
+.phone{font-family:var(--f-display);font-weight:700;font-size:1.35rem;color:var(--cta-ink);text-decoration:none;text-align:center;display:inline-flex;justify-content:center;align-items:center;gap:8px;min-height:44px}
+.phone svg{width:20px;height:20px}
+@media (max-width:760px){.cta .wrap{grid-template-columns:1fr;padding-block:56px}}
 
-footer{padding-block:32px;font-size:.92rem;color:var(--muted)}
-footer .wrap{display:flex;flex-wrap:wrap;gap:12px 28px;justify-content:space-between}
-footer a{text-decoration:none}
+footer{padding-block:28px 32px;font-size:.92rem;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;gap:8px 28px;justify-content:space-between}
+footer a{text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
 
-/* WhatsApp flutuante */
-.wa-float{position:fixed;right:calc(18px + env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:40;display:flex;align-items:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;font-weight:600;padding:14px 18px;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,.25)}
-.wa-float svg{width:26px;height:26px}
-@media (max-width:640px){.wa-float span{display:none}.wa-float{padding:15px}}
+/* Reserva fixa: pílula no desktop, barra inferior no celular */
+.book-float{position:fixed;z-index:45;display:flex;align-items:center;justify-content:center;gap:10px;background:var(--wa);color:#fff;text-decoration:none;font-weight:700;border-radius:999px;box-shadow:0 10px 28px rgba(0,0,0,.25);transition:transform .25s ease, opacity .25s ease;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));padding:14px 20px}
+.book-float svg{width:24px;height:24px;flex:none}
+.book-float.off{opacity:0;transform:translateY(16px);pointer-events:none}
+@media (max-width:640px){
+  .book-float{left:0;right:0;bottom:0;border-radius:0;box-shadow:0 -6px 20px rgba(0,0,0,.18);min-height:60px;padding:12px max(16px, env(safe-area-inset-right,0px)) calc(12px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-left,0px));font-size:1.02rem}
+  .book-float.off{transform:translateY(100%)}
+}
+
+/* Ampliação de fotos */
+.lb{border:0;padding:0;margin:0;width:100%;height:100%;max-width:none;max-height:none;background:rgba(8,12,10,.96);color:#fff}
+.lb::backdrop{background:rgba(8,12,10,.96)}
+.lb[open]{display:grid;grid-template-rows:auto 1fr auto}
+.lb-top{display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) max(12px, env(safe-area-inset-right,0px)) 10px max(16px, env(safe-area-inset-left,0px));font-size:.92rem;color:#C9CCC2}
+.lb-stage{position:relative;display:grid;place-items:center;min-height:0;padding:0 max(8px, env(safe-area-inset-left,0px));touch-action:pan-y}
+.lb-stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:8px;user-select:none;-webkit-user-drag:none}
+.lb-cap{text-align:center;padding:12px 16px calc(18px + env(safe-area-inset-bottom,0px));color:#E7E4D8;font-size:.98rem;min-height:3em}
+.lb-btn{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:rgba(255,255,255,.12);border:0;color:#fff;cursor:pointer}
+.lb-btn svg{width:22px;height:22px}
+@media (hover:hover){.lb-btn:hover{background:rgba(255,255,255,.22)}}
+.lb-prev,.lb-next{position:absolute;top:50%;transform:translateY(-50%)}
+.lb-prev{left:max(12px, env(safe-area-inset-left,0px))}
+.lb-next{right:max(12px, env(safe-area-inset-right,0px))}
+@media (max-width:640px){.lb-prev,.lb-next{top:auto;bottom:8px;transform:none;background:rgba(255,255,255,.16)}}
 </style>
 </head>
 <body>
@@ -224,11 +284,12 @@ footer a{text-decoration:none}
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15a8.2 8.2 0 0 1-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 4.54 0 8.24 3.7 8.24 8.24 0 4.55-3.7 8.24-8.24 8.24Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.78.97-.15.16-.29.18-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.42.08-.16.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.42h-.48c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.67-1.18.21-.58.21-1.07.15-1.18-.06-.1-.23-.16-.48-.28Z"/></symbol>
+  <symbol id="i-zoom" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
 </svg>
 
-<header class="top">
+<header class="top" id="topo">
   <div class="wrap">
-    <a class="brand" href="#inicio" aria-label="Pousada da Coruja, início">
+    <a class="brand" href="#inicio" aria-label="Pousada da Coruja, voltar ao início">
       <svg viewBox="0 0 40 40" aria-hidden="true">
         <path d="M8 12 L13 6 L16 11 Q20 9 24 11 L27 6 L32 12 Q35 18 34 25 Q32 35 20 36 Q8 35 6 25 Q5 18 8 12Z" fill="var(--leaf)"/>
         <circle cx="14.5" cy="19" r="5.2" fill="var(--mustard)"/><circle cx="25.5" cy="19" r="5.2" fill="var(--mustard)"/>
@@ -242,28 +303,28 @@ footer a{text-decoration:none}
       <a href="#jardim">Jardim</a>
       <a href="#pub">Pub</a>
       <a href="#localizacao">Localização</a>
-      <a class="btn btn-main" href="https://wa.me/5541996877984?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Pousada%20da%20Coruja%20e%20quero%20saber%20a%20disponibilidade%20para%20as%20datas%3A%20" target="_blank" rel="noopener">Reservar</a>
+      <a class="btn btn-main js-wa" href="https://wa.me/5541996877984" target="_blank" rel="noopener">Reservar</a>
     </nav>
   </div>
 </header>
 
 <main id="inicio">
-  <section class="hero">
+  <section class="hero" aria-labelledby="hero-t">
     <div class="wrap">
       <div class="hero-text">
         <span class="eyebrow">Matinhos · Litoral do Paraná</span>
-        <h1>Um jardim inteiro <em>esperando</em> por você.</h1>
+        <h1 id="hero-t">Um jardim inteiro <em>esperando</em> por você.</h1>
         <p class="lead">8 quartos de frente para um jardim cuidado, com a Serra do Mar no horizonte, café da manhã e um pub bar dentro da pousada. Seu pet também é bem-vindo.</p>
-        <div class="actions">
-          <a class="btn btn-main" href="https://wa.me/5541996877984?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Pousada%20da%20Coruja%20e%20quero%20saber%20a%20disponibilidade%20para%20as%20datas%3A%20" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Consultar disponibilidade</a>
+        <div class="btn-row" id="hero-cta">
+          <a class="btn btn-main js-wa" href="https://wa.me/5541996877984" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Consultar disponibilidade</a>
           <a class="btn btn-ghost" href="#jardim">Ver fotos</a>
         </div>
-        <a class="rating" href="https://www.google.com/maps/search/?api=1&query=Pousada+da+Coruja+R.+Tarum%C3%A3+51+Matinhos+PR" target="_blank" rel="noopener">
+        <a class="rating" href="https://www.google.com/maps/search/?api=1&amp;query=Pousada+da+Coruja+R.+Tarum%C3%A3+51+Matinhos+PR" target="_blank" rel="noopener">
           <b>5,0</b><span class="stars" aria-hidden="true">★★★★★</span><span>22 avaliações no Google</span>
         </a>
       </div>
-      <figure class="hero-media" style="margin:0">
-        <img src="img/por-do-sol.jpg" alt="Pôr do sol atrás da serra visto do corredor dos quartos, com jardim à esquerda" width="960" height="1280" fetchpriority="high">
+      <figure class="hero-media">
+        <img src="img/por-do-sol.jpg" srcset="img/por-do-sol-800.jpg 800w, img/por-do-sol.jpg 960w" sizes="(max-width:860px) 100vw, 440px" alt="Pôr do sol atrás da serra visto do corredor dos quartos, com jardim à esquerda" width="960" height="1280" fetchpriority="high">
         <figcaption><strong>Fim de tarde na pousada</strong>O sol se põe atrás da serra, bem na frente dos quartos.</figcaption>
       </figure>
     </div>
@@ -271,101 +332,101 @@ footer a{text-decoration:none}
 
   <div class="perks">
     <ul class="wrap" aria-label="Diferenciais">
-      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></span>Café da manhã</li>
-      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1.5-5.5A2 2 0 0 1 9.4 10h5.2a2 2 0 0 1 1.9 1.5L18 17"/><path d="M4 17v2.5M20 17v2.5"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg></span>Estacionamento</li>
-      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.05Q6.5 16.3 4.24 15.4A3.5 3.5 0 0 1 5.5 8.5 5 5 0 0 1 9 10"/></svg></span>Pet friendly</li>
-      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h.01"/><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M5 12.9a10 10 0 0 1 14 0"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/></svg></span>Wi‑Fi</li>
-      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg></span>Pub bar</li>
-      <li><span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12c0-4 2.5-7 7-8 0 4.5-3 8-7 8Z"/><path d="M12 15c0-3-2-5.5-6-6 0 3.5 2.5 6 6 6Z"/></svg></span>Jardim amplo</li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><path d="M6 2v2M10 2v2M14 2v2"/></svg></span>Café da manhã</li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17h14M6 17l1.5-5.5A2 2 0 0 1 9.4 10h5.2a2 2 0 0 1 1.9 1.5L18 17"/><path d="M4 17v2.5M20 17v2.5"/><circle cx="8" cy="17" r="1.6"/><circle cx="16" cy="17" r="1.6"/></svg></span>Estacionamento</li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.05Q6.5 16.3 4.24 15.4A3.5 3.5 0 0 1 5.5 8.5 5 5 0 0 1 9 10"/></svg></span>Pet friendly</li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h.01"/><path d="M2 8.8a15 15 0 0 1 20 0"/><path d="M5 12.9a10 10 0 0 1 14 0"/><path d="M8.5 16.4a5 5 0 0 1 7 0"/></svg></span>Wi‑Fi</li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 11h1a3 3 0 0 1 0 6h-1"/><path d="M9 12v6M13 12v6"/><path d="M14 7.5c-1 0-1.44.5-3 .5s-2-.5-3-.5-1.72.5-2.5.5a2.5 2.5 0 0 1 0-5c.78 0 1.57.5 2.5.5S9.44 2 11 2s2 1.5 3 1.5 1.72-.5 2.5-.5a2.5 2.5 0 0 1 0 5c-.78 0-1.5-.5-2.5-.5Z"/><path d="M5 8v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V8"/></svg></span>Pub bar</li>
+      <li><span class="ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22V12"/><path d="M12 12c0-4 2.5-7 7-8 0 4.5-3 8-7 8Z"/><path d="M12 15c0-3-2-5.5-6-6 0 3.5 2.5 6 6 6Z"/></svg></span>Jardim amplo</li>
     </ul>
   </div>
 
-  <section class="sec" id="quartos">
+  <section class="sec" id="quartos" aria-labelledby="quartos-t">
     <div class="wrap rooms">
-      <img src="img/quartos.jpg" alt="Prédio dos quartos, com portas numeradas no térreo, sacada no andar de cima e bancos amarelos no jardim" width="1280" height="720" loading="lazy">
+      <figure class="rooms-media">
+        <img src="img/quartos.jpg" srcset="img/quartos-800.jpg 800w, img/quartos.jpg 1280w" sizes="(max-width:860px) 100vw, 620px" alt="Prédio dos quartos, com portas numeradas no térreo, sacada no andar de cima e bancos amarelos no jardim" width="1280" height="720" loading="lazy" decoding="async">
+      </figure>
       <div class="rooms-text">
         <span class="eyebrow">Acomodações</span>
-        <div class="big-num">8<small>quartos para você escolher</small></div>
-        <p style="color:var(--muted)">Os quartos ficam no térreo e no andar de cima, com varanda corrida, e todas as portas abrem para o jardim. É só sair e sentar num dos bancos.</p>
+        <div class="rooms-title"><span class="big-num" aria-hidden="true">8</span><h2 id="quartos-t"><span class="sr-only">8 </span>quartos de frente para o jardim</h2></div>
+        <p>Os quartos ficam no térreo e no andar de cima, com varanda corrida, e todas as portas abrem para o jardim. É só sair e sentar num dos bancos.</p>
         <ul class="checks">
           <li>Café da manhã servido na pousada</li>
           <li>Wi‑Fi e estacionamento no local</li>
           <li>Hospedagem para casais, famílias e grupos</li>
         </ul>
-        <a class="btn btn-main" style="align-self:flex-start" href="https://wa.me/5541996877984?text=Ol%C3%A1!%20Gostaria%20de%20saber%20os%20quartos%20dispon%C3%ADveis%20e%20valores%20para%20as%20datas%3A%20" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Ver quartos livres e valores</a>
+        <a class="btn btn-main js-wa" data-msg="Olá! Gostaria de saber os quartos disponíveis e os valores para as datas: " href="https://wa.me/5541996877984" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Ver quartos livres e valores</a>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="jardim" style="padding-top:0">
+  <section class="sec" id="jardim" style="padding-top:0" aria-labelledby="jardim-t">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">O jardim</span>
-        <h2>Grama, sombra e a serra ao fundo.</h2>
+        <h2 id="jardim-t">Grama, sombra e a serra ao fundo.</h2>
         <p>Mesas espalhadas pelo gramado, bancos coloridos, cogumelos de cerâmica e caminhos de pedra. O tipo de lugar onde o café da manhã se estende até o meio-dia.</p>
       </div>
-      <div class="garden-grid">
-        <figure class="g1"><img src="img/jardim-serra.jpg" alt="Jardim com mesa de toalha florida, banquetas amarelas e o morro ao fundo" loading="lazy"><figcaption>Vista para o morro</figcaption></figure>
-        <figure class="g2"><img src="img/caminho.jpg" alt="Caminho de placas de concreto na grama levando até a casa" loading="lazy"><figcaption>A chegada</figcaption></figure>
-        <figure><img src="img/jardim-mesa.jpg" alt="Mesa de mosaico verde no jardim ao lado de uma casinha" loading="lazy"></figure>
-        <figure><img src="img/corredor.jpg" alt="Corredor dos quartos ao lado do gramado em dia de sol" loading="lazy"></figure>
-        <figure class="g5"><img src="img/noite.jpg" alt="Jardim iluminado à noite em frente ao prédio dos quartos" loading="lazy"><figcaption>À noite</figcaption></figure>
+      <div class="garden-grid" data-gallery>
+        <figure class="shot g1"><button type="button" aria-label="Ampliar foto: vista para o morro"><img src="img/jardim-serra.jpg" srcset="img/jardim-serra-800.jpg 800w, img/jardim-serra.jpg 1280w" sizes="(max-width:860px) 100vw, 580px" alt="Jardim com mesa de toalha florida, banquetas amarelas e o morro ao fundo" width="1280" height="720" loading="lazy" decoding="async"></button><span class="tag">Vista para o morro</span><span class="zoom-hint" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span></figure>
+        <figure class="shot g2"><button type="button" aria-label="Ampliar foto: a chegada"><img src="img/caminho.jpg" alt="Caminho de placas de concreto na grama levando até a casa" width="591" height="1005" loading="lazy" decoding="async"></button><span class="tag">A chegada</span></figure>
+        <figure class="shot"><button type="button" aria-label="Ampliar foto: mesa no jardim"><img src="img/jardim-mesa-800.jpg" alt="Mesa de mosaico verde no jardim ao lado de uma casinha" width="800" height="600" loading="lazy" decoding="async"></button></figure>
+        <figure class="shot"><button type="button" aria-label="Ampliar foto: corredor dos quartos"><img src="img/corredor-800.jpg" alt="Corredor dos quartos ao lado do gramado em dia de sol" width="800" height="450" loading="lazy" decoding="async"></button></figure>
+        <figure class="shot g5"><button type="button" aria-label="Ampliar foto: o jardim à noite"><img src="img/noite.jpg" srcset="img/noite-800.jpg 800w, img/noite.jpg 1600w" sizes="(max-width:860px) 100vw, 1120px" alt="Jardim iluminado à noite em frente ao prédio dos quartos" width="1600" height="900" loading="lazy" decoding="async"></button><span class="tag">À noite</span></figure>
       </div>
       <div class="jabuticaba">
-        <span class="dot" aria-hidden="true"></span>
-        <p><strong>Tem jabuticabeira no jardim.</strong> Na época certa, o tronco fica coberto de frutas e dá para colher direto do pé.</p>
+        <img src="img/jabuticaba.jpg" alt="Tronco da jabuticabeira coberto de frutas" width="576" height="1024" loading="lazy" decoding="async">
+        <p><strong>Tem jabuticabeira no jardim</strong>Na época certa, o tronco fica coberto de frutas e dá para colher direto do pé.</p>
       </div>
     </div>
   </section>
 
-  <section class="pub sec" id="pub">
+  <section class="pub sec" id="pub" aria-labelledby="pub-t">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Toca da Coruja Pub Bar</span>
-        <h2>O bar fica dentro da pousada.</h2>
+        <h2 id="pub-t">O bar fica dentro da pousada.</h2>
         <p>Parede de tijolo, banquetas amarelas no balcão, lampiões e cadeira de balanço. Você termina o dia com uma bebida gelada e volta para o quarto atravessando o jardim.</p>
       </div>
-      <div class="pub-grid">
-        <figure class="pub-main"><img src="img/pub-salao.jpg" alt="Salão do pub com parede de tijolos, mesas com toalhas floridas e balcão com banquetas amarelas" loading="lazy"></figure>
-        <div class="pub-side">
-          <figure><img src="img/pub-pet.jpg" alt="Cachorro caramelo e branco circulando entre as mesas do pub" loading="lazy"><figcaption>Pets são bem-vindos</figcaption></figure>
-          <figure><img src="img/janela-bar.jpg" alt="Vista do jardim iluminado à noite pela janela do bar" loading="lazy" style="object-position:40% 50%"><figcaption>Vista do balcão</figcaption></figure>
-        </div>
-        <figure class="pub-wide"><img src="img/pub-balcao.jpg" alt="Balcão do pub com banquetas amarelas e geladeira vermelha" loading="lazy"></figure>
+      <div class="pub-grid" data-gallery>
+        <figure class="shot p-main"><button type="button" aria-label="Ampliar foto: salão do pub"><img src="img/pub-salao.jpg" srcset="img/pub-salao-800.jpg 800w, img/pub-salao.jpg 1280w" sizes="(max-width:860px) 100vw, 560px" alt="Salão do pub com parede de tijolos, mesas com toalhas floridas e balcão com banquetas amarelas" width="1280" height="720" loading="lazy" decoding="async"></button><span class="zoom-hint" aria-hidden="true"><svg><use href="#i-zoom"/></svg></span></figure>
+        <figure class="shot p-side"><button type="button" aria-label="Ampliar foto: pets são bem-vindos"><img src="img/pub-pet.jpg" alt="Cachorro caramelo e branco circulando entre as mesas do pub" width="720" height="1280" loading="lazy" decoding="async" style="object-position:50% 70%"></button><span class="tag">Pets bem-vindos</span></figure>
+        <figure class="shot p-side"><button type="button" aria-label="Ampliar foto: vista do balcão"><img src="img/janela-bar-800.jpg" alt="Vista do jardim iluminado à noite pela janela do bar" width="800" height="450" loading="lazy" decoding="async" style="object-position:40% 50%"></button><span class="tag">Vista do balcão</span></figure>
       </div>
       <div class="pub-foot">
         <p>Também recebemos grupos e encontros. Fale com a gente para combinar.</p>
         <a class="ig" href="https://www.instagram.com/tocadacorujamatinhos/" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg>
           @tocadacorujamatinhos
         </a>
       </div>
     </div>
   </section>
 
-  <section class="sec" id="localizacao">
+  <section class="sec" id="localizacao" aria-labelledby="local-t">
     <div class="wrap">
       <div class="sec-head">
         <span class="eyebrow">Como chegar</span>
-        <h2>Em Matinhos, no litoral do Paraná.</h2>
+        <h2 id="local-t">Em Matinhos, no litoral do Paraná.</h2>
       </div>
       <div class="visit">
         <div class="card">
           <h3>Endereço</h3>
-          <div class="map-art" role="img" aria-label="Marcador da pousada no mapa"></div>
-          <p class="addr">R. Tarumã, 51<span>Matinhos – PR · CEP 83260-000</span></p>
-          <p class="muted">Perto do Parque Municipal do Sertãozinho.</p>
-          <div class="links">
-            <a class="btn btn-main" href="https://www.google.com/maps/dir/?api=1&destination=R.+Tarum%C3%A3,+51,+Matinhos+-+PR,+83260-000" target="_blank" rel="noopener">Traçar rota</a>
-            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Pousada+da+Coruja+R.+Tarum%C3%A3+51+Matinhos+PR" target="_blank" rel="noopener">Abrir no Google Maps</a>
+          <div class="addr">
+            <span class="pin" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+            <p>R. Tarumã, 51<span>Matinhos – PR · CEP 83260-000</span><span>Perto do Parque Municipal do Sertãozinho</span></p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-main" href="https://www.google.com/maps/dir/?api=1&amp;destination=R.+Tarum%C3%A3,+51,+Matinhos+-+PR,+83260-000" target="_blank" rel="noopener">Traçar rota</a>
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Pousada+da+Coruja+R.+Tarum%C3%A3+51+Matinhos+PR" target="_blank" rel="noopener">Abrir no Google Maps</a>
           </div>
         </div>
         <div class="card">
           <h3>Avaliações</h3>
-          <div class="score"><b>5,0</b><span class="stars" aria-label="5 de 5 estrelas">★★★★★</span></div>
+          <div class="score"><b>5,0</b><span class="stars" role="img" aria-label="5 de 5 estrelas">★★★★★</span></div>
           <p class="muted">Nota média de 22 avaliações de hóspedes no Google.</p>
-          <div class="links">
-            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&query=Pousada+da+Coruja+R.+Tarum%C3%A3+51+Matinhos+PR" target="_blank" rel="noopener">Ler as avaliações</a>
+          <div class="btn-row">
+            <a class="btn btn-ghost" href="https://www.google.com/maps/search/?api=1&amp;query=Pousada+da+Coruja+R.+Tarum%C3%A3+51+Matinhos+PR" target="_blank" rel="noopener">Ler as avaliações</a>
           </div>
         </div>
       </div>
@@ -384,15 +445,15 @@ footer a{text-decoration:none}
     </div>
   </section>
 
-  <section class="cta">
+  <section class="cta" id="reservar" aria-labelledby="cta-t">
     <div class="wrap">
       <div>
-        <h2>Reserve direto com a gente.</h2>
+        <h2 id="cta-t">Reserve direto com a gente.</h2>
         <p>Atendimento pelo WhatsApp, sem intermediários.</p>
       </div>
       <div class="cta-actions">
-        <a class="btn btn-main" href="https://wa.me/5541996877984?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Pousada%20da%20Coruja%20e%20quero%20saber%20a%20disponibilidade%20para%20as%20datas%3A%20" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
-        <span class="phone">(41) 99687-7984</span>
+        <a class="btn btn-main js-wa" href="https://wa.me/5541996877984" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-wa"/></svg>Chamar no WhatsApp</a>
+        <a class="phone" href="tel:+5541996877984"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2Z"/></svg>(41) 99687-7984</a>
       </div>
     </div>
   </section>
@@ -405,7 +466,92 @@ footer a{text-decoration:none}
   </div>
 </footer>
 
-<a class="wa-float" href="https://wa.me/5541996877984?text=Ol%C3%A1!%20Vi%20o%20site%20da%20Pousada%20da%20Coruja%20e%20quero%20saber%20a%20disponibilidade%20para%20as%20datas%3A%20" target="_blank" rel="noopener" aria-label="Reservar pelo WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>Reservar</span></a>
+<a class="book-float js-wa off" id="book-float" href="https://wa.me/5541996877984" target="_blank" rel="noopener" aria-label="Reservar pelo WhatsApp"><svg aria-hidden="true"><use href="#i-wa"/></svg><span>Consultar disponibilidade</span></a>
+
+<dialog class="lb" id="lb" aria-label="Fotos ampliadas">
+  <div class="lb-top"><span id="lb-count">1 / 1</span><button class="lb-btn" type="button" id="lb-close" aria-label="Fechar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg></button></div>
+  <div class="lb-stage" id="lb-stage">
+    <img id="lb-img" alt="">
+    <button class="lb-btn lb-prev" type="button" id="lb-prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+    <button class="lb-btn lb-next" type="button" id="lb-next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+  </div>
+  <p class="lb-cap" id="lb-cap"></p>
+</dialog>
+
+<script>
+(function(){
+  /* Mensagem pronta no WhatsApp */
+  var base = "Olá! Vi o site da Pousada da Coruja e quero saber a disponibilidade para as datas: ";
+  document.querySelectorAll(".js-wa").forEach(function(a){
+    a.href = "https://wa.me/5541996877984?text=" + encodeURIComponent(a.dataset.msg || base);
+  });
+
+  /* Borda do cabeçalho ao rolar */
+  var header = document.getElementById("topo");
+  function onScroll(){ header.classList.toggle("scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", onScroll, {passive:true}); onScroll();
+
+  /* Botão de reserva fixo: some enquanto um botão de reserva já está visível */
+  var fl = document.getElementById("book-float");
+  var watch = [document.getElementById("hero-cta"), document.getElementById("reservar")];
+  var visible = new Set();
+  var mq = window.matchMedia("(max-width:640px)");
+  function sync(){
+    var off = visible.size > 0;
+    fl.classList.toggle("off", off);
+    document.documentElement.style.setProperty("--bar-h", (!off && mq.matches) ? "60px" : "0px");
+  }
+  if ("IntersectionObserver" in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ e.isIntersecting ? visible.add(e.target) : visible.delete(e.target); });
+      sync();
+    });
+    watch.forEach(function(el){ if (el) io.observe(el); });
+  } else { fl.classList.remove("off"); }
+  if (mq.addEventListener) mq.addEventListener("change", sync);
+
+  /* Fotos ampliadas */
+  var lb = document.getElementById("lb");
+  if (!lb || typeof lb.showModal !== "function") return;
+  var lbImg = document.getElementById("lb-img"), lbCap = document.getElementById("lb-cap"), lbCount = document.getElementById("lb-count");
+  var items = [], idx = 0, opener = null;
+  function show(i){
+    idx = (i + items.length) % items.length;
+    var im = items[idx];
+    lbImg.src = im.currentSrc || im.src; lbImg.alt = im.alt;
+    var big = im.getAttribute("srcset");
+    if (big){ var parts = big.split(","); lbImg.src = parts[parts.length-1].trim().split(" ")[0]; }
+    lbCap.textContent = im.alt;
+    lbCount.textContent = (idx + 1) + " / " + items.length;
+  }
+  document.querySelectorAll("[data-gallery]").forEach(function(g){
+    var imgs = Array.prototype.slice.call(g.querySelectorAll("img"));
+    imgs.forEach(function(im, i){
+      im.closest("button").addEventListener("click", function(){
+        items = imgs; opener = this; show(i); lb.showModal();
+      });
+    });
+  });
+  document.getElementById("lb-close").addEventListener("click", function(){ lb.close(); });
+  document.getElementById("lb-prev").addEventListener("click", function(){ show(idx - 1); });
+  document.getElementById("lb-next").addEventListener("click", function(){ show(idx + 1); });
+  lb.addEventListener("close", function(){ if (opener) opener.focus(); });
+  lb.addEventListener("click", function(e){ if (e.target === lb || e.target.id === "lb-stage") lb.close(); });
+  lb.addEventListener("keydown", function(e){
+    if (e.key === "ArrowLeft") show(idx - 1);
+    if (e.key === "ArrowRight") show(idx + 1);
+  });
+  var sx = null, sy = null;
+  var stage = document.getElementById("lb-stage");
+  stage.addEventListener("touchstart", function(e){ sx = e.touches[0].clientX; sy = e.touches[0].clientY; }, {passive:true});
+  stage.addEventListener("touchend", function(e){
+    if (sx === null) return;
+    var dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy;
+    if (Math.abs(dx) > 45 && Math.abs(dx) > Math.abs(dy)) show(idx + (dx < 0 ? 1 : -1));
+    sx = sy = null;
+  });
+})();
+</script>
 
 </body>
 </html>
