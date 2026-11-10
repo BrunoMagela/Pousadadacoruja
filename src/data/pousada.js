@@ -35,21 +35,21 @@ export const objections = [
 
 // Criador de Estadia Ideal
 export const reasons = [
-  { id: "casal", label: "Casal", icon: "heart", title: "Escapada a dois", line: "Dias lentos, café sem pressa e o fim de tarde no pub." },
-  { id: "familia", label: "Família", icon: "home", title: "Férias em família", line: "Jardim amplo para as crianças e espaço para todo mundo." },
-  { id: "solo", label: "Sozinho(a)", icon: "user", title: "Pausa só sua", line: "Silêncio, Serra do Mar no horizonte e tempo para você." },
-  { id: "amigos", label: "Amigos", icon: "users", title: "Encontro da turma", line: "Quartos lado a lado e um pub para a noite render." },
+  { id: "casal", label: "Casal", icon: "heart", title: "Escapada a dois", line: "Praia de dia, pub à noite e café da manhã sem pressa." },
+  { id: "familia", label: "Família", icon: "home", title: "Férias em família", line: "Dia de praia com as crianças e espaço para todo mundo descansar." },
+  { id: "solo", label: "Sozinho(a)", icon: "user", title: "Pausa só sua", line: "Mar, sossego e tempo só para você." },
+  { id: "amigos", label: "Amigos", icon: "users", title: "Encontro da turma", line: "Praia o dia todo e um pub para a noite render." },
 ];
 
 // Stories: cada círculo abre uma sequência em tela cheia.
 export const stories = [
   {
     id: "jardim",
-    title: "Jardim",
+    title: "Pousada",
     cover: "/video/story-jardim.jpg",
     slides: [
-      { type: "video", src: "/video/story-jardim.mp4", poster: "/video/story-jardim.jpg", caption: "Todas as portas abrem para o jardim." },
-      { type: "image", src: "/img/jardim-serra-800.jpg", caption: "Mesas no gramado e o morro ao fundo." },
+      { type: "video", src: "/video/story-jardim.mp4", poster: "/video/story-jardim.jpg", caption: "Chegou da praia? O descanso começa aqui." },
+      { type: "image", src: "/img/jardim-serra-800.jpg", caption: "Mesas ao ar livre para o fim de tarde." },
       { type: "image", src: "/img/jardim-mesa-800.jpg", caption: "Cantinhos para ler, conversar ou não fazer nada." },
     ],
   },
@@ -59,7 +59,7 @@ export const stories = [
     cover: "/img/quartos-800.jpg",
     slides: [
       { type: "image", src: "/img/quartos-800.jpg", caption: "8 quartos, no térreo e no andar de cima." },
-      { type: "image", src: "/img/corredor-800.jpg", caption: "Sai do quarto e já está no jardim." },
+      { type: "image", src: "/img/corredor-800.jpg", caption: "Sai do quarto e já está ao ar livre." },
     ],
   },
   {
@@ -77,7 +77,7 @@ export const stories = [
     title: "Fim de tarde",
     cover: "/img/por-do-sol-800.jpg",
     slides: [
-      { type: "image", src: "/img/por-do-sol-800.jpg", caption: "O sol se põe atrás da serra, na frente dos quartos." },
+      { type: "image", src: "/img/por-do-sol-800.jpg", caption: "O pôr do sol depois de um dia de praia, na frente dos quartos." },
     ],
   },
   {
@@ -85,7 +85,7 @@ export const stories = [
     title: "À noite",
     cover: "/img/noite-800.jpg",
     slides: [
-      { type: "image", src: "/img/noite-800.jpg", caption: "O jardim iluminado depois do jantar." },
+      { type: "image", src: "/img/noite-800.jpg", caption: "A pousada iluminada depois do jantar." },
       { type: "image", src: "/img/janela-bar-800.jpg", caption: "A vista do balcão do pub." },
     ],
   },
@@ -124,5 +124,5 @@ export const faq = [
   { q: "Tem estacionamento?", a: "Sim. O estacionamento fica dentro da pousada." },
   { q: "O café da manhã está incluso?", a: "A pousada serve café da manhã. Confirme as condições da sua tarifa na hora da reserva." },
   { q: "Tem Wi‑Fi?", a: "Sim, Wi‑Fi para todos os hóspedes." },
-  { q: "Vocês recebem grupos?", a: "Sim. São 8 quartos em volta do mesmo jardim e um pub dentro da pousada. Fale pelo WhatsApp para combinar." },
+  { q: "Vocês recebem grupos?", a: "Sim. São 8 quartos lado a lado e um pub dentro da pousada. Fale pelo WhatsApp para combinar." },
 ];

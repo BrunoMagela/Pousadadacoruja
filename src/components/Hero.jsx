@@ -63,7 +63,7 @@ export default function Hero() {
             transition={{ duration: 0.8, ease, delay: 0.08 }}
             className="text-[2.75rem] leading-[0.98] [text-shadow:0_2px_24px_rgb(0_0_0/0.35)] sm:text-6xl lg:text-7xl lg:[text-shadow:none]"
           >
-            Acorde com a Serra do Mar no quintal.
+            Depois da praia, o descanso é aqui.
           </motion.h1>
 
           <motion.p
@@ -72,7 +72,7 @@ export default function Hero() {
             transition={{ duration: 0.7, ease, delay: 0.18 }}
             className="text-[1.08rem] leading-relaxed text-sand/85 sm:text-xl"
           >
-            8 quartos de frente para um jardim, café da manhã na pousada e um pub bar a poucos passos da sua porta.
+            8 quartos com café da manhã para começar o dia de praia e um pub bar para fechar a noite sem sair da pousada.
           </motion.p>
 
           <motion.div
@@ -120,7 +120,7 @@ export default function Hero() {
               playsInline
               autoPlay
               preload="metadata"
-              aria-label="Vídeo do jardim da pousada"
+              aria-label="Vídeo da área externa da pousada"
               onTimeUpdate={(e) => {
                 const v = e.currentTarget;
                 if (v.duration) setProgress(v.currentTime / v.duration);
@@ -136,7 +136,7 @@ export default function Hero() {
               Pousada da Coruja
             </div>
             <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-5 pt-16 text-sm">
-              Uma volta pelo jardim, numa manhã de sol.
+              Uma manhã de sol, antes de ir para a praia.
             </figcaption>
           </div>
         </motion.figure>

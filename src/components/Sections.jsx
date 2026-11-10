@@ -23,8 +23,8 @@ export function Rooms() {
           />
         </Reveal>
         <div className="flex flex-col gap-6">
-          <SectionHead eyebrow="Acomodações" title={<span id="quartos-t">8 quartos. Todos de frente para o jardim.</span>}>
-            Os quartos ficam no térreo e no andar de cima, com varanda corrida. Você abre a porta e já está no gramado, com a serra no horizonte.
+          <SectionHead eyebrow="Acomodações" title={<span id="quartos-t">8 quartos para descansar depois da praia.</span>}>
+            Quartos no térreo e no andar de cima, com varanda corrida. Volte da praia, descanse no quarto e aproveite o fim de tarde na varanda ou ao ar livre.
           </SectionHead>
           <Reveal as="ul" className="flex flex-col gap-3" delay={0.1}>
             {["Café da manhã servido na pousada", "Wi‑Fi e estacionamento no local", "Quartos para casais, famílias e grupos"].map((t) => (
@@ -51,8 +51,8 @@ export function Garden() {
   return (
     <section id="jardim" className="bg-sand py-20 sm:py-28" aria-labelledby="jardim-t">
       <div className="container-site gutter">
-        <SectionHead eyebrow="O jardim" title={<span id="jardim-t">O lugar onde o café da manhã vira meio-dia.</span>}>
-          Mesas no gramado, bancos coloridos, cogumelos de cerâmica e uma jabuticabeira que, na época certa, fica coberta de fruta.
+        <SectionHead eyebrow="Área externa" title={<span id="jardim-t">Sombra e sossego para a volta da praia.</span>}>
+          Mesas no gramado, bancos coloridos e cantos à sombra para relaxar depois do sol. Na época certa, tem até jabuticaba no pé.
         </SectionHead>
         <div className="mt-10 grid auto-rows-[clamp(120px,38vw,230px)] grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4">
           {garden.map((g, i) => (
@@ -81,8 +81,8 @@ export function Pub() {
       <div className="pointer-events-none absolute -right-40 -top-56 size-[620px] rounded-full bg-[radial-gradient(circle,rgb(226_178_63/0.22),transparent_65%)]" />
       <div className="container-site gutter relative grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:gap-16">
         <div className="flex flex-col gap-6">
-          <SectionHead tone="dark" eyebrow="Toca da Coruja Pub Bar" title={<span id="pub-t">O fim do dia fica a poucos passos do seu quarto.</span>}>
-            Parede de tijolo, banquetas amarelas no balcão, lampiões e cadeira de balanço. Você brinda, conversa, e volta para o quarto atravessando o jardim.
+          <SectionHead tone="dark" eyebrow="Toca da Coruja Pub Bar" title={<span id="pub-t">O dia de praia termina a poucos passos do quarto.</span>}>
+            Parede de tijolo, banquetas amarelas no balcão, lampiões e cadeira de balanço. Você volta da praia, brinda com a turma e vai dormir sem precisar pegar o carro.
           </SectionHead>
           <Reveal delay={0.1} className="flex flex-wrap items-center gap-4">
             <a href={`https://www.instagram.com/${contact.instagram}/`} target="_blank" rel="noopener" className="inline-flex min-h-12 items-center gap-2 font-semibold text-honey">
@@ -154,7 +154,7 @@ export function SocialProof() {
         ) : (
           <Reveal className="flex flex-col gap-4" delay={0.1}>
             <h2 className="text-[2.15rem] leading-[1.02] text-ink sm:text-5xl">Cinco estrelas, de quem já acordou aqui.</h2>
-            <p className="text-lg text-stone">As avaliações são públicas no Google Maps. Leia o que os hóspedes contam sobre o jardim, o café e o pub antes de reservar.</p>
+            <p className="text-lg text-stone">As avaliações são públicas no Google Maps. Leia o que os hóspedes contam sobre o descanso, o café e o pub antes de reservar.</p>
           </Reveal>
         )}
       </div>
@@ -218,8 +218,8 @@ export function Location() {
   return (
     <section id="localizacao" className="bg-sand py-20 sm:py-28" aria-labelledby="local-t">
       <div className="container-site gutter grid gap-10 lg:grid-cols-2 lg:items-center lg:gap-16">
-        <SectionHead eyebrow="Como chegar" title={<span id="local-t">Em Matinhos, entre a serra e o mar.</span>}>
-          A pousada fica numa rua tranquila de Matinhos, no litoral do Paraná, perto do Parque Municipal do Sertãozinho.
+        <SectionHead eyebrow="Como chegar" title={<span id="local-t">Em Matinhos, no litoral do Paraná.</span>}>
+          A pousada fica numa rua tranquila de Matinhos, cidade de praia do litoral paranaense, perto do Parque Municipal do Sertãozinho.
         </SectionHead>
         <Reveal delay={0.1} className="flex flex-col gap-6 rounded-card border border-line bg-paper p-6 sm:p-8">
           <div className="flex items-start gap-4">
@@ -289,7 +289,7 @@ export function FinalCTA() {
       <img src="/img/por-do-sol-800.jpg" alt="" className="absolute inset-0 -z-10 size-full object-cover opacity-35" loading="lazy" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-t from-forest via-forest/80 to-forest/40" />
       <div className="container-site gutter flex flex-col items-start gap-6 py-24 sm:py-32">
-        <Reveal as="h2" className="max-w-3xl text-[2.6rem] leading-[1] sm:text-6xl"><span id="cta-t">Sua vaga no jardim está a uma mensagem.</span></Reveal>
+        <Reveal as="h2" className="max-w-3xl text-[2.6rem] leading-[1] sm:text-6xl"><span id="cta-t">Seu descanso na praia está a uma mensagem.</span></Reveal>
         <Reveal as="p" delay={0.08} className="max-w-xl text-lg text-sand/80">Mande as datas pelo WhatsApp e receba os quartos livres e o valor direto da pousada.</Reveal>
         <Reveal delay={0.15} className="flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:items-center">
           <WhatsAppButton className="w-full sm:w-auto" />
