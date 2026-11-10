@@ -27,9 +27,9 @@ export const rating = {
 // Micro-copys que respondem às dúvidas antes da pergunta.
 export const objections = [
   { icon: "coffee", label: "Café da manhã", note: "servido na pousada" },
-  { icon: "car", label: "Estacionamento", note: "dentro da pousada" },
-  { icon: "wifi", label: "Wi‑Fi", note: "para todos os hóspedes" },
-  { icon: "beer", label: "Pub bar", note: "a poucos passos do quarto" },
+  { icon: "car", label: "Estacionamento", note: "no local" },
+  { icon: "wifi", label: "Wi‑Fi", note: "para hóspedes" },
+  { icon: "beer", label: "Pub bar", note: "dentro da pousada" },
   { icon: "chat", label: "Reserva direta", note: "fale com a pousada" },
 ];
 
