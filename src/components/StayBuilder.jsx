@@ -147,7 +147,7 @@ export default function StayBuilder() {
 
           {/* Resumo */}
           <div className="lg:sticky lg:top-24 lg:self-start">
-            <motion.div layout className="overflow-hidden rounded-card bg-forest text-sand shadow-soft">
+            <motion.div layout id="estadia-resumo" className="overflow-hidden rounded-card bg-forest text-sand shadow-soft">
               <div className="relative h-36 overflow-hidden">
                 <img src="/img/por-do-sol-800.jpg" alt="" className="size-full object-cover object-[50%_35%] opacity-80" loading="lazy" />
                 <div className="absolute inset-0 bg-gradient-to-t from-forest to-transparent" />

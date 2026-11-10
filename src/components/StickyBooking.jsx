@@ -4,12 +4,12 @@ import { WhatsAppIcon } from "./Icon.jsx";
 import { waLink } from "../lib/whatsapp.js";
 
 // CTA flutuante: barra inferior no celular, pílula no desktop.
-// Some enquanto o botão do topo ou a chamada final estão visíveis, para não repetir.
+// Some enquanto outro botão de reserva está na tela (abertura, criador de estadia ou chamada final).
 export default function StickyBooking() {
   const [show, setShow] = useState(false);
 
   useEffect(() => {
-    const targets = ["hero-cta", "reservar"].map((id) => document.getElementById(id)).filter(Boolean);
+    const targets = ["hero-cta", "estadia-resumo", "reservar"].map((id) => document.getElementById(id)).filter(Boolean);
     if (!("IntersectionObserver" in window) || targets.length === 0) { setShow(true); return; }
     const visible = new Set();
     const io = new IntersectionObserver((entries) => {

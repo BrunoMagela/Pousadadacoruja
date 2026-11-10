@@ -34,9 +34,6 @@ export function Rooms() {
               </li>
             ))}
           </Reveal>
-          <Reveal delay={0.15}>
-            <WhatsAppButton message="Olá! Quero saber quais quartos estão livres e os valores para as datas: " className="w-full sm:w-auto">Ver quartos livres e valores</WhatsAppButton>
-          </Reveal>
         </div>
       </div>
     </section>
@@ -188,7 +185,6 @@ export function DirectBooking() {
               ))}
             </Reveal>
           )}
-          <Reveal delay={0.1}><WhatsAppButton className="w-full sm:w-auto">Reservar direto no WhatsApp</WhatsAppButton></Reveal>
         </div>
 
         <Reveal delay={0.05} className="overflow-hidden rounded-card border border-line bg-sand/50">
