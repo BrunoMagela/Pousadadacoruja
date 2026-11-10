@@ -305,9 +305,20 @@ export function FinalCTA() {
 export function Footer() {
   return (
     <footer className="bg-forest-2 py-8 text-sm text-sand/65">
-      <div className="container-site gutter flex flex-col gap-2 sm:flex-row sm:justify-between">
+      <div className="container-site gutter flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
         <span>© Pousada da Coruja · {contact.street}, Matinhos – PR</span>
         <a href={`https://www.instagram.com/${contact.instagram}/`} target="_blank" rel="noopener" className="inline-flex min-h-11 items-center hover:text-sand">Instagram @{contact.instagram}</a>
+      </div>
+      <div className="container-site gutter mt-5">
+        <p className="flex items-center justify-center gap-2 border-t border-white/10 pt-5 text-xs tracking-wide text-sand/50 sm:justify-end">
+          Desenvolvido por
+          <span className="inline-flex items-center gap-1.5 font-semibold tracking-[0.18em] text-sand/80">
+            <svg viewBox="0 0 24 24" className="size-3.5 text-honey" aria-hidden="true">
+              <path fill="currentColor" d="M12 1.5 14.2 9.8 22.5 12l-8.3 2.2L12 22.5l-2.2-8.3L1.5 12l8.3-2.2Z" />
+            </svg>
+            NORTE LABS
+          </span>
+        </p>
       </div>
     </footer>
   );
